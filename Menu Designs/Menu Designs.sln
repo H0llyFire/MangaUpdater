@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu Designs", "Menu Designs\Menu Designs.csproj", "{7AD21D8F-B293-461D-AEED-07D140B3E4DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MangaLibrary", "MangaLibrary\MangaLibrary.csproj", "{C298BD92-5C0D-4BC1-AC9F-104021229322}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AD21D8F-B293-461D-AEED-07D140B3E4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD21D8F-B293-461D-AEED-07D140B3E4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD21D8F-B293-461D-AEED-07D140B3E4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD21D8F-B293-461D-AEED-07D140B3E4DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C298BD92-5C0D-4BC1-AC9F-104021229322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C298BD92-5C0D-4BC1-AC9F-104021229322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C298BD92-5C0D-4BC1-AC9F-104021229322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C298BD92-5C0D-4BC1-AC9F-104021229322}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EA1A9F9-80FC-4FD3-A667-7469DC88A93E}
+	EndGlobalSection
+EndGlobal
