@@ -359,11 +359,6 @@ namespace Menu_Designs
             // 
             this.NumericChaptersRead.DecimalPlaces = 2;
             this.NumericChaptersRead.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumericChaptersRead.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.NumericChaptersRead.Location = new System.Drawing.Point(467, 136);
             this.NumericChaptersRead.Maximum = new decimal(new int[] {
             100000,

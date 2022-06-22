@@ -69,6 +69,7 @@ namespace Menu_Designs
             this.Controls.Add(this.ConsoleLogBox);
             this.Name = "ConsoleLog";
             this.Text = "ConsoleLog";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsoleLog_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

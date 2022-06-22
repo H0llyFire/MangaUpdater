@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Menu_Designs
@@ -14,6 +15,15 @@ namespace Menu_Designs
         {
             ConsoleLogBox.AppendText(text + "\n");
         }
+        public void LogLine(string text, Color color)
+        {
+            ConsoleLogBox.SelectionStart = ConsoleLogBox.TextLength;
+            ConsoleLogBox.SelectionLength = 0;
+            ConsoleLogBox.SelectionColor = color;
+
+            ConsoleLogBox.AppendText(text + "\n");
+            ConsoleLogBox.SelectionColor = ConsoleLogBox.ForeColor;
+        }
 
         private void ButtonSend_Click(object sender, EventArgs e)
         {
@@ -23,6 +33,15 @@ namespace Menu_Designs
         public void ToggleConsole()
         {
             Visible = !Visible;
+        }
+
+        private void ConsoleLog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Hide();
+            }
         }
     }
 }

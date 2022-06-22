@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 
 namespace Menu_Designs.WebScraping
@@ -18,17 +19,17 @@ namespace Menu_Designs.WebScraping
             try
             {
                 data = ManganeloScraping.GetChapters(manga.LinkManganelo);
+                manga.NewestChapterManganelo = float.Parse(data[0]);
             }
             catch
             {
-                FormObjects.ConsoleLogForm.LogLine("FAILED:  " + manga.Name);
+                FormObjects.ConsoleLogForm.LogLine("[Manganelo]FAILED:  " + manga.Name, Color.Red);
                 return manga;
             }
 
-            manga.NewestChapterManganelo = float.Parse(data[0]);
             manga.NewestDateManganelo = DateTime.ParseExact(data[1], "MMM dd,yyyy HH:mm", new CultureInfo("en-US"));
             MangaLibrary.DataAccess.UpdateChapters(manga);
-            FormObjects.ConsoleLogForm.LogLine("SUCCESS: " + manga.Name);
+            FormObjects.ConsoleLogForm.LogLine("[Manganelo]SUCCESS: " + manga.Name, Color.ForestGreen);
             return manga;
         }
         private static MangaLibrary.MangaListModel UpdateEarlymanga(MangaLibrary.MangaListModel manga)
@@ -39,17 +40,17 @@ namespace Menu_Designs.WebScraping
             try
             {
                 data = EarlymangaScraping.GetChaptersData(manga.LinkEarlymanga);
+                manga.NewestChapterEarlymanga = float.Parse(data[0]);
             }
             catch
             {
-                FormObjects.ConsoleLogForm.LogLine("FAILED:  " + manga.Name);
+                FormObjects.ConsoleLogForm.LogLine("[EarlyManga]FAILED:  " + manga.Name, Color.Red);
                 return manga;
             }
             
-            manga.NewestChapterEarlymanga = float.Parse(data[0]);
             manga.NewestDateEarlymanga = DateTime.Parse(data[1], new CultureInfo("en-US"));
             MangaLibrary.DataAccess.UpdateChapters(manga);
-            FormObjects.ConsoleLogForm.LogLine("SUCCESS: " + manga.Name);
+            FormObjects.ConsoleLogForm.LogLine("[EarlyManga]SUCCESS: " + manga.Name, Color.ForestGreen);
             return manga;
         }
 
