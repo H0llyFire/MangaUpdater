@@ -37,6 +37,9 @@ namespace Menu_Designs
             this.MangaName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
             this.ButtonSearch = new System.Windows.Forms.Button();
+            this.PictureSelectedManga = new System.Windows.Forms.PictureBox();
+            this.ButtonCatchUp = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedManga)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonMenu
@@ -94,6 +97,7 @@ namespace Menu_Designs
             this.ListViewMangas.TabIndex = 16;
             this.ListViewMangas.UseCompatibleStateImageBehavior = false;
             this.ListViewMangas.View = System.Windows.Forms.View.Details;
+            this.ListViewMangas.Click += new System.EventHandler(this.ListViewMangas_Click);
             this.ListViewMangas.DoubleClick += new System.EventHandler(this.ListViewMangas_DoubleClick);
             // 
             // Chapters
@@ -128,12 +132,37 @@ namespace Menu_Designs
             this.ButtonSearch.UseVisualStyleBackColor = false;
             this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
+            // PictureSelectedManga
+            // 
+            this.PictureSelectedManga.Location = new System.Drawing.Point(829, 261);
+            this.PictureSelectedManga.Name = "PictureSelectedManga";
+            this.PictureSelectedManga.Size = new System.Drawing.Size(96, 120);
+            this.PictureSelectedManga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureSelectedManga.TabIndex = 20;
+            this.PictureSelectedManga.TabStop = false;
+            // 
+            // ButtonCatchUp
+            // 
+            this.ButtonCatchUp.BackColor = System.Drawing.Color.GhostWhite;
+            this.ButtonCatchUp.Enabled = false;
+            this.ButtonCatchUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ButtonCatchUp.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold);
+            this.ButtonCatchUp.Location = new System.Drawing.Point(800, 387);
+            this.ButtonCatchUp.Name = "ButtonCatchUp";
+            this.ButtonCatchUp.Size = new System.Drawing.Size(154, 50);
+            this.ButtonCatchUp.TabIndex = 21;
+            this.ButtonCatchUp.Text = "CatchUp";
+            this.ButtonCatchUp.UseVisualStyleBackColor = false;
+            this.ButtonCatchUp.Click += new System.EventHandler(this.ButtonCatchUp_Click);
+            // 
             // MangaList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(966, 593);
+            this.Controls.Add(this.ButtonCatchUp);
+            this.Controls.Add(this.PictureSelectedManga);
             this.Controls.Add(this.ButtonSearch);
             this.Controls.Add(this.TextBoxSearch);
             this.Controls.Add(this.ListViewMangas);
@@ -147,6 +176,7 @@ namespace Menu_Designs
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manga Updater";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MangaList_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedManga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +191,7 @@ namespace Menu_Designs
         private System.Windows.Forms.ColumnHeader MangaName;
         private System.Windows.Forms.TextBox TextBoxSearch;
         private System.Windows.Forms.Button ButtonSearch;
+        private System.Windows.Forms.PictureBox PictureSelectedManga;
+        private System.Windows.Forms.Button ButtonCatchUp;
     }
 }

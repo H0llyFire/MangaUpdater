@@ -44,11 +44,10 @@ namespace Menu_Designs
 
         private void ListViewMangas_DoubleClick(object sender, EventArgs e)
         {
-            if (ListViewMangas.SelectedItems != null)
-            {
+            if (ListViewMangas.SelectedIndices.Count != 0)
                 OpenMangaView(ListViewMangas.SelectedIndices[0]);
-            }
         }
+
         public void LoadList(string querry = "")
         {
             FormObjects.ConsoleLogForm.LogLine("Load Initiated");
@@ -71,6 +70,35 @@ namespace Menu_Designs
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
             LoadList(TextBoxSearch.Text);
+        }
+
+        private void ListViewMangas_Click(object sender, EventArgs e)
+        {
+            if (ListViewMangas.SelectedIndices.Count!=0)
+            {
+                PictureSelectedManga.Image =
+                    ImageFunctions.ByteToImage(mangas[ListViewMangas.SelectedIndices[0]].Image);
+                ButtonCatchUp.Enabled = true;
+            }
+            else
+            {
+                ButtonCatchUp.Enabled = false;
+            }
+        }
+
+        private void ButtonCatchUp_Click(object sender, EventArgs e)
+        {
+            if (ListViewMangas.SelectedIndices.Count != 0)
+            {
+                var manga = mangas[ListViewMangas.SelectedIndices[0]];
+                WebScraping.Updatings.UpdateManga(manga);
+
+                manga.LastReadChapter = manga.NewestChapterEarlymanga > manga.NewestChapterManganelo
+                    ? manga.NewestChapterEarlymanga
+                    : manga.NewestChapterManganelo;
+                MangaLibrary.DataAccess.UpdateManga(manga);
+                FormObjects.MangaListForm.LoadList();
+            }
         }
     }
 }
